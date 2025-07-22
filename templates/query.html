@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Ask the Agent - {{ brand_config.company_name }}{% endblock %}
+
+{% block extra_head %}
+<style>
+.loading {
+    display: none;
+}
+.loading.active {
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="query-page">
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="fas fa-comments"></i> Ask the Lumen Agent</h1>
+            <p>Get expert guidance on scaling your technology business, technical support, or general inquiries.</p>
+        </div>
+
+        <div class="query-interface">
+            <div class="query-form-section">
+                <div class="form-tabs">
+                    <button type="button" class="tab-btn active" data-tab="general">General Inquiry</button>
+                    <button type="button" class="tab-btn" data-tab="scaling">Partner Scaling</button>
+                    <button type="button" class="tab-btn" data-tab="technical">Technical Support</button>
+                    <button type="button" class="tab-btn" data-tab="onboarding">Onboarding</button>
+                </div>
+
+                <form id="queryForm">
+                    <!-- Partner Information Section -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-building"></i> Partner Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="partnerName">Partner Name</label>
+                                <input type="text" id="partnerName" name="partner_name" placeholder="Your company name">
+                            </div>
+                            <div class="form-group">
+                                <label for="partnerTier">Partner Tier</label>
+                                <select id="partnerTier" name="partner_tier">
+                                    <option value="">Select tier</option>
+                                    <option value="Standard">Standard</option>
+                                    <option value="Silver">Silver</option>
+                                    <option value="Gold">Gold</option>
+                                    <option value="Platinum">Platinum</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="focusArea">Focus Area</label>
+                                <select id="focusArea" name="focus_area">
+                                    <option value="">Select focus area</option>
+                                    <option value="Cloud Infrastructure">Cloud Infrastructure</option>
+                                    <option value="Network Services">Network Services</option>
+                                    <option value="Security Solutions">Security Solutions</option>
+                                    <option value="Managed Services">Managed Services</option>
+                                    <option value="Hybrid Cloud Solutions">Hybrid Cloud Solutions</option>
+                                    <option value="Data Analytics">Data Analytics</option>
+                                    <option value="IoT Solutions">IoT Solutions</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="region">Region</label>
+                                <select id="region" name="region">
+                                    <option value="">Select region</option>
+                                    <option value="North America">North America</option>
+                                    <option value="Europe">Europe</option>
+                                    <option value="Asia Pacific">Asia Pacific</option>
+                                    <option value="Latin America">Latin America</option>
+                                    <option value="Middle East & Africa">Middle East & Africa</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Query Type Specific Fields -->
+                    <div id="general-tab" class="tab-content active">
+                        <div class="form-section">
+                            <h3><i class="fas fa-question-circle"></i> General Inquiry</h3>
+                            <div class="form-group">
+                                <label for="generalQuery">Your Question</label>
+                                <textarea id="generalQuery" name="query" rows="6" 
+                                         placeholder="Ask about Lumen solutions, partnership opportunities, or any general questions..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="scaling-tab" class="tab-content">
+                        <div class="form-section">
+                            <h3><i class="fas fa-chart-line"></i> Partner Scaling Consultation</h3>
+                            <div class="form-group">
+                                <label for="scalingQuery">Scaling Challenge or Goal</label>
+                                <textarea id="scalingQuery" name="query" rows="6" 
+                                         placeholder="Describe your scaling goals, challenges, or areas where you need growth recommendations..."></textarea>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="currentRevenue">Current Annual Revenue</label>
+                                    <input type="text" id="currentRevenue" name="current_revenue" placeholder="e.g., $2M annually">
+                                </div>
+                                <div class="form-group">
+                                    <label for="targetGrowth">Target Growth</label>
+                                    <input type="text" id="targetGrowth" name="target_growth" placeholder="e.g., 50% in 12 months">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="technical-tab" class="tab-content">
+                        <div class="form-section">
+                            <h3><i class="fas fa-tools"></i> Technical Support</h3>
+                            <div class="form-group">
+                                <label for="technicalIssue">Technical Issue or Question</label>
+                                <textarea id="technicalIssue" name="query" rows="6" 
+                                         placeholder="Describe the technical issue, integration challenge, or technical question you need help with..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="urgency">Priority Level</label>
+                                <select id="urgency" name="urgency">
+                                    <option value="low">Low - General inquiry</option>
+                                    <option value="medium" selected>Medium - Standard priority</option>
+                                    <option value="high">High - Business impact</option>
+                                    <option value="critical">Critical - Service disruption</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="onboarding-tab" class="tab-content">
+                        <div class="form-section">
+                            <h3><i class="fas fa-rocket"></i> Partner Onboarding</h3>
+                            <div class="form-group">
+                                <label for="onboardingQuery">Onboarding Question or Need</label>
+                                <textarea id="onboardingQuery" name="query" rows="6" 
+                                         placeholder="What would you like to know about getting started as a Lumen partner?"></textarea>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="partnerType">Partner Type</label>
+                                    <select id="partnerType" name="partner_type">
+                                        <option value="">Select type</option>
+                                        <option value="New Partner">New Partner</option>
+                                        <option value="Existing Partner">Existing Partner</option>
+                                        <option value="Prospective Partner">Prospective Partner</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="businessFocus">Business Focus</label>
+                                    <input type="text" id="businessFocus" name="business_focus" placeholder="e.g., SMB Cloud Services">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            <span class="btn-text">Submit Query</span>
+                            <i class="fas fa-spinner loading"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="response-section">
+                <div id="responseContainer" class="response-container" style="display: none;">
+                    <div class="response-header">
+                        <h3><i class="fas fa-robot"></i> Agent Response</h3>
+                        <div class="response-info">
+                            <span class="demo-badge" style="display: none;">Demo Mode</span>
+                        </div>
+                    </div>
+                    <div id="responseContent" class="response-content"></div>
+                    <div class="response-actions">
+                        <button type="button" class="btn btn-secondary" onclick="clearResponse()">
+                            <i class="fas fa-redo"></i> Ask Another Question
+                        </button>
+                        <button type="button" class="btn btn-outline" onclick="copyResponse()">
+                            <i class="fas fa-copy"></i> Copy Response
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/query.js') }}"></script>
+{% endblock %}

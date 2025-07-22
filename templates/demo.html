@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block title %}Demo Scenarios - {{ brand_config.company_name }}{% endblock %}
+
+{% block content %}
+<section class="demo-page">
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="fas fa-play"></i> Demo Scenarios</h1>
+            <p>Explore different use cases and see how the Lumen Magentic-One Agent responds to various partner scenarios.</p>
+        </div>
+
+        <div class="demo-scenarios">
+            <div class="scenario-card">
+                <div class="scenario-header">
+                    <div class="scenario-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Infrastructure Partner</h3>
+                    <span class="scenario-tier">Gold Tier</span>
+                </div>
+                <div class="scenario-content">
+                    <p><strong>Partner:</strong> CloudTech Solutions</p>
+                    <p><strong>Focus:</strong> Cloud Infrastructure</p>
+                    <p><strong>Region:</strong> North America</p>
+                    <p><strong>Challenge:</strong> Scaling from mid-market to enterprise accounts</p>
+                    
+                    <div class="scenario-query">
+                        <h4>Sample Query:</h4>
+                        <p>"We're a Gold-tier partner specializing in cloud infrastructure. Our current customer base is primarily mid-market companies, but we want to expand into enterprise accounts. What Lumen solutions and strategies would help us scale our operations and win larger deals?"</p>
+                    </div>
+                </div>
+                <div class="scenario-actions">
+                    <button type="button" class="btn btn-primary" onclick="tryScenario('cloud')">
+                        <i class="fas fa-play"></i> Try This Scenario
+                    </button>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-header">
+                    <div class="scenario-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Network Services Partner</h3>
+                    <span class="scenario-tier">Platinum Tier</span>
+                </div>
+                <div class="scenario-content">
+                    <p><strong>Partner:</strong> NetConnect Pro</p>
+                    <p><strong>Focus:</strong> Network Services</p>
+                    <p><strong>Region:</strong> Europe</p>
+                    <p><strong>Challenge:</strong> Technical SD-WAN connectivity issues</p>
+                    
+                    <div class="scenario-query">
+                        <h4>Sample Query:</h4>
+                        <p>"We're experiencing intermittent connectivity issues with our SD-WAN deployment for a major client. The issues seem to occur during peak traffic hours and are affecting business-critical applications. We need immediate guidance on troubleshooting and resolution."</p>
+                    </div>
+                </div>
+                <div class="scenario-actions">
+                    <button type="button" class="btn btn-primary" onclick="tryScenario('network')">
+                        <i class="fas fa-play"></i> Try This Scenario
+                    </button>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-header">
+                    <div class="scenario-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security Solutions Partner</h3>
+                    <span class="scenario-tier">Silver Tier</span>
+                </div>
+                <div class="scenario-content">
+                    <p><strong>Partner:</strong> SecureEdge Technologies</p>
+                    <p><strong>Focus:</strong> Security Solutions</p>
+                    <p><strong>Region:</strong> Asia Pacific</p>
+                    <p><strong>Challenge:</strong> Expanding cybersecurity portfolio</p>
+                    
+                    <div class="scenario-query">
+                        <h4>Sample Query:</h4>
+                        <p>"As a Silver-tier security partner, we're looking to expand our cybersecurity offerings. We currently focus on endpoint protection but want to move into network security and threat intelligence. What Lumen security solutions would complement our existing portfolio for APAC market growth?"</p>
+                    </div>
+                </div>
+                <div class="scenario-actions">
+                    <button type="button" class="btn btn-primary" onclick="tryScenario('security')">
+                        <i class="fas fa-play"></i> Try This Scenario
+                    </button>
+                </div>
+            </div>
+
+            <div class="scenario-card">
+                <div class="scenario-header">
+                    <div class="scenario-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Managed Services Partner</h3>
+                    <span class="scenario-tier">Standard Tier</span>
+                </div>
+                <div class="scenario-content">
+                    <p><strong>Partner:</strong> TotalCare MSP</p>
+                    <p><strong>Focus:</strong> Managed Services</p>
+                    <p><strong>Region:</strong> North America</p>
+                    <p><strong>Challenge:</strong> New partner onboarding</p>
+                    
+                    <div class="scenario-query">
+                        <h4>Sample Query:</h4>
+                        <p>"We're a new Standard-tier partner specializing in managed services for small and medium businesses. We're just getting started with Lumen and need guidance on onboarding, training priorities, and how to quickly start generating revenue with Lumen solutions."</p>
+                    </div>
+                </div>
+                <div class="scenario-actions">
+                    <button type="button" class="btn btn-primary" onclick="tryScenario('msp')">
+                        <i class="fas fa-play"></i> Try This Scenario
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-features">
+            <div class="feature-highlight">
+                <h2>What Makes Our Agent Special?</h2>
+                <div class="highlight-grid">
+                    <div class="highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI-Powered Intelligence</h3>
+                        <p>Advanced AI understanding of technology industry challenges and solutions</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Oneshot Mode</h3>
+                        <p>Complete, comprehensive responses in a single interaction</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-palette"></i>
+                        <h3>Lumen Branded</h3>
+                        <p>Consistent brand experience with Lumen's professional identity</p>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Scaling Focused</h3>
+                        <p>Specialized knowledge for partner growth and business expansion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+const scenarios = {
+    cloud: {
+        partner_name: "CloudTech Solutions",
+        partner_tier: "Gold",
+        focus_area: "Cloud Infrastructure",
+        region: "North America",
+        query: "We're a Gold-tier partner specializing in cloud infrastructure. Our current customer base is primarily mid-market companies, but we want to expand into enterprise accounts. What Lumen solutions and strategies would help us scale our operations and win larger deals?",
+        query_type: "scaling"
+    },
+    network: {
+        partner_name: "NetConnect Pro",
+        partner_tier: "Platinum",
+        focus_area: "Network Services",
+        region: "Europe",
+        query: "We're experiencing intermittent connectivity issues with our SD-WAN deployment for a major client. The issues seem to occur during peak traffic hours and are affecting business-critical applications. We need immediate guidance on troubleshooting and resolution.",
+        query_type: "technical",
+        urgency: "high"
+    },
+    security: {
+        partner_name: "SecureEdge Technologies",
+        partner_tier: "Silver",
+        focus_area: "Security Solutions",
+        region: "Asia Pacific",
+        query: "As a Silver-tier security partner, we're looking to expand our cybersecurity offerings. We currently focus on endpoint protection but want to move into network security and threat intelligence. What Lumen security solutions would complement our existing portfolio for APAC market growth?",
+        query_type: "scaling"
+    },
+    msp: {
+        partner_name: "TotalCare MSP",
+        partner_tier: "Standard",
+        focus_area: "Managed Services",
+        region: "North America",
+        query: "We're a new Standard-tier partner specializing in managed services for small and medium businesses. We're just getting started with Lumen and need guidance on onboarding, training priorities, and how to quickly start generating revenue with Lumen solutions.",
+        query_type: "onboarding"
+    }
+};
+
+function tryScenario(scenarioKey) {
+    const scenario = scenarios[scenarioKey];
+    if (!scenario) return;
+    
+    // Store scenario data in sessionStorage
+    sessionStorage.setItem('demo_scenario', JSON.stringify(scenario));
+    
+    // Navigate to query page
+    window.location.href = '/query';
+}
+
+// Check if we came from a demo scenario
+document.addEventListener('DOMContentLoaded', function() {
+    const storedScenario = sessionStorage.getItem('demo_scenario');
+    if (storedScenario && window.location.pathname === '/query') {
+        // This will be handled in the query.js file
+        console.log('Demo scenario detected:', JSON.parse(storedScenario));
+    }
+});
+</script>
+{% endblock %}

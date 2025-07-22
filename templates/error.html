@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}Error {{ error_code }} - {{ brand_config.company_name }}{% endblock %}
+
+{% block content %}
+<section class="error-page">
+    <div class="container">
+        <div class="error-content">
+            <div class="error-icon">
+                {% if error_code == 404 %}
+                    <i class="fas fa-search"></i>
+                {% else %}
+                    <i class="fas fa-exclamation-triangle"></i>
+                {% endif %}
+            </div>
+            <h1>{{ error_code }}</h1>
+            <h2>{{ error_message }}</h2>
+            {% if error_code == 404 %}
+                <p>The page you're looking for doesn't exist or has been moved.</p>
+            {% else %}
+                <p>Something went wrong on our end. Please try again later.</p>
+            {% endif %}
+            
+            <div class="error-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Go Home
+                </a>
+                <a href="{{ url_for('query_page') }}" class="btn btn-secondary">
+                    <i class="fas fa-comments"></i> Ask the Agent
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.error-page {
+    padding: 100px 0;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.error-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.error-icon {
+    font-size: 6em;
+    color: var(--lumen-gray-300);
+    margin-bottom: 30px;
+}
+
+.error-content h1 {
+    font-size: 8em;
+    font-weight: bold;
+    color: var(--lumen-primary);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.error-content h2 {
+    font-size: 2em;
+    color: var(--lumen-text);
+    margin-bottom: 20px;
+}
+
+.error-content p {
+    font-size: 1.2em;
+    color: var(--lumen-gray-500);
+    margin-bottom: 40px;
+}
+
+.error-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .error-content h1 {
+        font-size: 6em;
+    }
+    
+    .error-icon {
+        font-size: 4em;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .error-actions .btn {
+        width: 200px;
+    }
+}
+</style>
+{% endblock %}
