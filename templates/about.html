@@ -1,0 +1,436 @@
+{% extends "base.html" %}
+
+{% block title %}About - {{ brand_config.company_name }}{% endblock %}
+
+{% block content %}
+<section class="about-page">
+    <div class="container">
+        <div class="page-header">
+            <h1><i class="fas fa-info-circle"></i> About the Lumen Magentic-One Agent</h1>
+            <p>Learn about our AI-powered customer support and partner scaling solution.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-section">
+                <h2>Overview</h2>
+                <p>The Lumen Magentic-One Agent is a specialized AI-powered customer support solution designed specifically for Lumen Technologies' channel partners. Operating in oneshot mode, this agent provides comprehensive support for technology industry partners looking to scale their operations.</p>
+                
+                <div class="key-features">
+                    <h3>Key Features</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <h4>Lumen Brand Integration</h4>
+                                <p>Consistent brand experience with Lumen's signature blue (#3b82f6) color theme and professional voice</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <h4>Customer Support Specialization</h4>
+                                <p>Expert guidance for channel partners, technical assistance, and strategic insights</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>Channel Partner Scaling</h4>
+                                <p>Multi-tenant support with partner-specific customization and growth analytics</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Oneshot Mode Configuration</h4>
+                                <p>Direct execution without MCP tools or Agent-to-Agent orchestration for immediate value</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-specs">
+                <h2>Technical Specifications</h2>
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <h3><i class="fas fa-cloud"></i> Azure AI Integration</h3>
+                        <ul>
+                            <li>Azure AI Projects SDK</li>
+                            <li>GPT-4 and Azure OpenAI models</li>
+                            <li>Azure identity management</li>
+                            <li>Scalable cloud-based execution</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3><i class="fas fa-cog"></i> Agent Configuration</h3>
+                        <ul>
+                            <li>Oneshot mode operation</li>
+                            <li>No MCP Tools required</li>
+                            <li>No Agent-to-Agent communication</li>
+                            <li>Single-shot response generation</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3><i class="fas fa-building"></i> Brand Theming</h3>
+                        <ul>
+                            <li>Primary Color: #3b82f6</li>
+                            <li>Professional, innovative voice</li>
+                            <li>Technology industry focus</li>
+                            <li>Consistent visual identity</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3><i class="fas fa-users"></i> Multi-tenant Support</h3>
+                        <ul>
+                            <li>Partner-specific configurations</li>
+                            <li>Isolated data handling</li>
+                            <li>Tier-based feature access</li>
+                            <li>Customized response templates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-cases">
+                <h2>Primary Use Cases</h2>
+                <div class="use-case-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-number">01</div>
+                        <h3>Channel Partner Scaling Consultation</h3>
+                        <p>Strategic recommendations for growing technology business, market expansion strategies, and operational scaling guidance.</p>
+                        <div class="use-case-example">
+                            <strong>Example:</strong> "Help us scale our cloud infrastructure services for the SMB market"
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-number">02</div>
+                        <h3>Technical Support</h3>
+                        <p>Expert technical assistance, integration challenges, troubleshooting guidance, and best practice recommendations.</p>
+                        <div class="use-case-example">
+                            <strong>Example:</strong> "SD-WAN connectivity issues affecting business-critical applications"
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-number">03</div>
+                        <h3>General Customer Support</h3>
+                        <p>Product consultation, solution recommendations, account management, and partnership guidance.</p>
+                        <div class="use-case-example">
+                            <strong>Example:</strong> "What Lumen solutions are best for small business cloud services?"
+                        </div>
+                    </div>
+                    <div class="use-case-card">
+                        <div class="use-case-number">04</div>
+                        <h3>Partner Onboarding</h3>
+                        <p>Streamlined onboarding process, training resources, certification pathways, and success planning.</p>
+                        <div class="use-case-example">
+                            <strong>Example:</strong> "New partner seeking guidance on getting started with Lumen programs"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="architecture">
+                <h2>System Architecture</h2>
+                <div class="architecture-diagram">
+                    <div class="architecture-layer">
+                        <h4>Frontend Layer</h4>
+                        <p>Flask web application with responsive HTML/CSS/JavaScript interface</p>
+                    </div>
+                    <div class="architecture-arrow">⬇</div>
+                    <div class="architecture-layer">
+                        <h4>Agent Layer</h4>
+                        <p>MagenticOneAgent with Lumen branding and support templates</p>
+                    </div>
+                    <div class="architecture-arrow">⬇</div>
+                    <div class="architecture-layer">
+                        <h4>AI Layer</h4>
+                        <p>Azure AI Projects with GPT-4 model deployment</p>
+                    </div>
+                    <div class="architecture-arrow">⬇</div>
+                    <div class="architecture-layer">
+                        <h4>Configuration Layer</h4>
+                        <p>Brand config, support templates, and partner profiling</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <h2>Success Metrics</h2>
+                <div class="metrics-categories">
+                    <div class="metric-category">
+                        <h3>Partner Satisfaction</h3>
+                        <ul>
+                            <li>Response accuracy and relevance</li>
+                            <li>Time to resolution</li>
+                            <li>Partner feedback scores</li>
+                            <li>Escalation rates</li>
+                        </ul>
+                    </div>
+                    <div class="metric-category">
+                        <h3>Scaling Effectiveness</h3>
+                        <ul>
+                            <li>Partner growth rates</li>
+                            <li>Revenue expansion</li>
+                            <li>Market penetration</li>
+                            <li>Operational efficiency</li>
+                        </ul>
+                    </div>
+                    <div class="metric-category">
+                        <h3>Technical Performance</h3>
+                        <ul>
+                            <li>Average response time (&lt; 5 seconds)</li>
+                            <li>System availability (99.9%+)</li>
+                            <li>Error rates (&lt; 0.1%)</li>
+                            <li>Resource utilization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>Get Support</h2>
+                <p>For technical questions or partner support needs:</p>
+                <div class="contact-options">
+                    <div class="contact-item">
+                        <i class="fas fa-question-circle"></i>
+                        <div>
+                            <h4>Technical Issues</h4>
+                            <p>Submit issues via GitHub repository</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-handshake"></i>
+                        <div>
+                            <h4>Partner Support</h4>
+                            <p>Contact your dedicated partner manager</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>General Inquiries</h4>
+                            <p>Visit the Lumen partner portal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_head %}
+<style>
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-section {
+    margin-bottom: 60px;
+}
+
+.about-section h2 {
+    color: var(--lumen-primary);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.key-features h3 {
+    margin: 40px 0 30px;
+    color: var(--lumen-text);
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.feature-item i {
+    color: var(--lumen-primary);
+    font-size: 1.5em;
+    margin-top: 5px;
+}
+
+.feature-item h4 {
+    margin-bottom: 8px;
+    color: var(--lumen-text);
+}
+
+.specs-grid, .use-case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.spec-card, .use-case-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+.spec-card h3 {
+    color: var(--lumen-primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spec-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.spec-card li {
+    padding: 5px 0;
+    color: var(--lumen-gray-500);
+    position: relative;
+    padding-left: 20px;
+}
+
+.spec-card li::before {
+    content: "•";
+    color: var(--lumen-primary);
+    position: absolute;
+    left: 0;
+}
+
+.use-case-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--lumen-primary);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.use-case-example {
+    margin-top: 15px;
+    padding: 15px;
+    background: var(--lumen-gray-50);
+    border-radius: var(--border-radius);
+    font-style: italic;
+}
+
+.architecture-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.architecture-layer {
+    background: white;
+    padding: 20px 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    max-width: 400px;
+    border-left: 4px solid var(--lumen-primary);
+}
+
+.architecture-layer h4 {
+    color: var(--lumen-primary);
+    margin-bottom: 10px;
+}
+
+.architecture-arrow {
+    font-size: 1.5em;
+    color: var(--lumen-primary);
+}
+
+.metrics-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.metric-category {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+.metric-category h3 {
+    color: var(--lumen-primary);
+    margin-bottom: 20px;
+}
+
+.metric-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.metric-category li {
+    padding: 8px 0;
+    color: var(--lumen-gray-500);
+    position: relative;
+    padding-left: 20px;
+}
+
+.metric-category li::before {
+    content: "📊";
+    position: absolute;
+    left: 0;
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-item i {
+    color: var(--lumen-primary);
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .architecture-diagram {
+        padding: 0 20px;
+    }
+    
+    .architecture-layer {
+        max-width: 100%;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+{% endblock %}

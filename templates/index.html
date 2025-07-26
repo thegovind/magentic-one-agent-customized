@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}{{ brand_config.company_name }} - AI-Powered Customer Support{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>AI-Powered Customer Support</h1>
+            <h2>Channel Partner Scaling Solutions</h2>
+            <p class="hero-description">
+                Get instant, expert guidance from our specialized Magentic-One Agent designed specifically 
+                for Lumen's technology partners. Scale your operations with AI-powered insights and support.
+            </p>
+            <div class="hero-buttons">
+                <a href="{{ url_for('query_page') }}" class="btn btn-primary">
+                    <i class="fas fa-comments"></i> Ask the Agent
+                </a>
+                <a href="{{ url_for('demo_page') }}" class="btn btn-secondary">
+                    <i class="fas fa-play"></i> View Demo
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="agent-card">
+                <div class="agent-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Lumen Support Agent</h3>
+                <p>Specialized in technology solutions and partner scaling</p>
+                <div class="agent-stats">
+                    <div class="stat">
+                        <strong>24/7</strong>
+                        <span>Available</span>
+                    </div>
+                    <div class="stat">
+                        <strong>Instant</strong>
+                        <span>Responses</span>
+                    </div>
+                    <div class="stat">
+                        <strong>Expert</strong>
+                        <span>Knowledge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>Comprehensive Support Services</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Partner Scaling</h3>
+                <p>Strategic recommendations for growing your technology business and expanding market reach.</p>
+                <ul>
+                    <li>Growth opportunity analysis</li>
+                    <li>Operational scaling strategies</li>
+                    <li>Revenue optimization</li>
+                    <li>Market expansion guidance</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Technical Support</h3>
+                <p>Expert technical assistance and troubleshooting for Lumen's technology solutions.</p>
+                <ul>
+                    <li>Real-time problem solving</li>
+                    <li>Integration guidance</li>
+                    <li>Best practice recommendations</li>
+                    <li>Performance optimization</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Customer Support</h3>
+                <p>Professional customer service tailored to technology industry partners.</p>
+                <ul>
+                    <li>Product consultation</li>
+                    <li>Solution recommendations</li>
+                    <li>Account management</li>
+                    <li>Partnership guidance</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Partner Onboarding</h3>
+                <p>Streamlined onboarding process to get new partners up and running quickly.</p>
+                <ul>
+                    <li>Program overview</li>
+                    <li>Training resources</li>
+                    <li>Certification pathways</li>
+                    <li>Success planning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Agent Availability</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">< 5s</div>
+                <div class="stat-label">Average Response Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Lumen Brand Aligned</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Scaling Potential</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Scale Your Partnership?</h2>
+            <p>Get started with our AI-powered support agent and unlock your growth potential.</p>
+            <a href="{{ url_for('query_page') }}" class="btn btn-primary btn-large">
+                <i class="fas fa-comments"></i> Start Conversation
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling for anchor links
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

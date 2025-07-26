@@ -2,9 +2,29 @@
 
 A customized Magentic-One Agent template specifically designed for Lumen Technologies' customer support and channel partner scaling needs. This agent operates in oneshot mode without MCP Tools or Agent-to-Agent (A2A) capabilities, providing comprehensive support for technology industry partners.
 
+**✨ NEW: Complete Web Frontend Interface Available!** See [Frontend Setup Guide](FRONTEND_SETUP.md) for the web interface.
+
 ## 🎯 Overview
 
 This agent is tailored for Lumen's technology industry focus, helping channel partners scale their operations through expert guidance, technical support, and strategic insights. The agent maintains Lumen's brand identity with the signature #3b82f6 primary color theme throughout all interactions.
+
+## 🌐 Web Interface
+
+The complete web frontend provides:
+- **Professional UI** with Lumen branding
+- **Interactive Query Forms** for different support types
+- **Demo Scenarios** with real partner examples
+- **Responsive Design** for all devices
+- **Real-time Processing** with loading states
+
+**Quick Start Web Interface:**
+```bash
+pip install -r requirements.txt
+python web_app.py
+# Visit http://localhost:5000
+```
+
+See [FRONTEND_SETUP.md](FRONTEND_SETUP.md) for complete frontend documentation.
 
 ## ✨ Key Features
 
